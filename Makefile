@@ -17,7 +17,7 @@ docker-run:
 	docker run -p 8000:8000 tinyvision:latest
 
 lint:
-	ruff check tinyvision
+	ruff check tinyvision tests
 
 fmt:
-	black tinyvision
+	black tinyvision tests
