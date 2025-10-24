@@ -4,6 +4,7 @@ from PIL import Image
 import io
 import base64
 import numpy as np
+from .ui import build_ui
 
 from .model import predict_topk, preprocess, get_model_and_device, LABELS
 from .gradcam import GradCAM
@@ -60,3 +61,4 @@ async def predict(file: UploadFile = File(...), gradcam: bool = False):
 
     return JSONResponse(out)
 
+app = build_ui(app)
